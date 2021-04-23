@@ -6,4 +6,9 @@ RSpec.describe Movie do
     it { should validate_presence_of :summary }
     it { should validate_presence_of :year }
   end 
+
+  describe 'relationships' do 
+    it { should have_many :actor_movies }
+    it { should have_many(:actors).through(:actor_movies) }
+  end 
 end 
